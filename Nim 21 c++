@@ -1,0 +1,113 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int z = 21, P1=0, P2=0, x, y, a,b=1;
+    cout<<"Please subtract from 1 to three: 21 \nenter 1 to choose playing against another player : \nenter 2  to choose playing against the computer : "<<endl;
+    cin>>a;
+    if (a==2)
+    {
+        while (z>1)
+        {
+            cout<<"Player One subtracts:";
+            cin>>x;
+            if (x==1 || x==2 || x==3 )
+            {
+                z-=x;
+                P1+=1;
+                cout<<z<<endl;
+                if (z>1)
+                {
+                    if (x==1)
+                    {
+                        z-=3;
+                        P2+=1;
+                        cout<<"AI subtracted Three\n"<<z<<endl;
+                    }
+                    else if (x==2)
+                    {
+                        z-=2;
+                        P2+=1;
+                        cout<<"AI subtracted Two\n"<<z<<endl;
+                    }
+                    else if (x==3)
+                    {
+                        z-=1;
+                        P2+=1;
+                        cout<<"AI subtracted One\n"<<z<<endl;
+                    }
+                }
+            }
+            else
+            {
+                cout<<"Pleas only subtract 1, 2 or 3!!"<<endl;
+            }
+        }
+
+        if (P2>=P1)
+        {
+            cout<<"AI Wins"<<endl;
+        }
+        else
+        {
+            cout<<"Player One Wins"<<endl;
+        }
+    }
+    else if(a==1)
+    {
+        while (z>1)
+        {
+            cout<<"Player One subtracts: ";
+            cin>>x;
+            if (x==1 || x==2 || x==3)
+            {
+                z-=x;
+                P1+=1;
+                cout<<z<<endl;
+                if (z>1)
+                {
+                    b=1;
+                    while (b==1)
+                    {
+                        cout<<"Player Two subtracts: ";
+                        cin>>y;
+                        if (y==1 || y==2 || y==3)
+                        {
+                            z-=y;
+                            P2+=1;
+                            b=0;
+                            cout<< z <<endl;
+                        }
+                        else
+                        {
+                            cout<<"Pleas only subtract 1, 2 or 3!!"<<endl;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                cout<<"Pleas only subtract 1, 2 or 3!!"<<endl;
+
+            }
+        }
+        if (P1>=P2)
+        {
+            cout<<"Player Two Wins";
+        }
+        else
+        {
+            cout<<"Player One Wins";
+        }
+    }
+
+    else
+    {
+        cout<<"Wrong input"<<endl;
+        main();
+    }
+
+    return 0;
+}
